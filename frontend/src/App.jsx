@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/" element={<Converter />}></Route>
+        <Route path="/converter" element={<Converter />}></Route>
       </Routes>
     </Router>
   );
