@@ -18,7 +18,7 @@ function Converter() {
 
           <h1 class="text-cianotxt font-bold text-3xl">PEXIO</h1>
         </div>
-        <div class="text-cianotxt mt-7 flex border-cianobranco shadow-xs border h-[28rem] w-[38rem] rounded-xl flex-col p-8">
+        <div class="text-cianotxt mt-7 flex border-cianobranco shadow-xs border h-[30rem] w-[38rem] rounded-xl flex-col p-8">
           <h2 class="font-medium">Escolha o tipo de conversão:</h2>
           <ul class="grid grid-cols-2 gap-2 mt-5 ">
             <li class="col-start-1 border border-gray-300 rounded p-3 flex gap-2">
@@ -54,7 +54,7 @@ function Converter() {
 
           <h2 class="font-medium mt-8">Selecione seu arquivo:</h2>
           <FileUploader />
-          <button class="bg-gradient-to-r from-ciano to-cianoclaro font-bold w-full text-white p-3 rounded-xl">
+          <button class="bg-gradient-to-r from-ciano to-cianoclaro font-bold w-full text-white p-3 rounded-xl mt-7">
             Converter PDF para PNG
           </button>
         </div>

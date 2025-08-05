@@ -13,17 +13,15 @@ export default function FileUploader() {
   return (
     <div
       {...getRootProps()}
-      className={`flex flex-col place-items-center border-1 border-dashed h-full rounded-xl p-8 text-center cursor-pointer transition ${
-        isDragActive ? "bg-blue-100 border-ciano" : "bg-white border-gray-300"
+      className={`border-1 border-dashed h-full rounded-xl p-8 cursor-pointer transition flex place-items-center flex-col ${
+        isDragActive ? "bg-blue-100 border-verde" : "bg-white border-gray-300"
       }`}
     >
-      <Upload />
+      <Upload size={45} color="#56828f" />
       <input {...getInputProps()} />
-      {isDragActive ? (
-        <p>Clique para escolher um arquivo</p>
-      ) : (
-        <p>ou arraste e solte aqui</p>
-      )}
+      <p class="font-medium text-sm mt-3">Clique para escolher um arquivo</p>
+      <p class="text-xs text-gray-500 mt-2">ou arraste e solte aqui</p>
+      <p class="text-xs text-gray-500 mt-1">Formato aceito: PDF</p>
     </div>
   );
 }
