@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cianoclaro: #7dc9e0;
+  --color-ciano: #44bde2;
+  --color-cianotxt: #004766;
+  --color-bggray: #f5f9fa;
+}
