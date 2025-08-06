@@ -16,7 +16,13 @@ export default function FileUploader({
     [onArquivoSelecionado]
   );
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  const acceptFormato =
+    formato === "PDF" ? { "application/pdf": [] } : { "image/*": [] };
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: acceptFormato,
+  });
 
   return (
     <div
@@ -30,11 +36,16 @@ export default function FileUploader({
       ) : (
         <Upload size={45} color="#56828f" />
       )}
-
       <input {...getInputProps()} />
+
       {arquivoSelecionado ? (
         <div className="text-center">
-          <p className="font-medium text-sm mt-3">{arquivoSelecionado.name}</p>
+          <p className="font-medium text-sm mt-3">
+            {arquivoSelecionado[0].name}{" "}
+            {arquivoSelecionado.length > 1
+              ? `e outros ${arquivoSelecionado.length - 1}`
+              : ""}
+          </p>
           <p className="text-xs text-gray-500 mt-2">
             Clique para escolher outro arquivo
           </p>

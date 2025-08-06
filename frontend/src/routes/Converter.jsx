@@ -10,11 +10,12 @@ function Converter() {
 
   const handleChange = (event) => {
     setFormatoaceito(event.target.value);
+    setArquivoSelecionado(null);
   };
 
   const handleArquivoSelecionado = (files) => {
     if (files.length > 0) {
-      setArquivoSelecionado(files[0]);
+      setArquivoSelecionado(files);
     } else {
       setArquivoSelecionado(null);
     }
@@ -84,8 +85,8 @@ function Converter() {
               disabled={!arquivoSelecionado}
               className={`bg-gradient-to-r from-ciano to-cianoclaro font-bold w-full text-white p-3 rounded-xl mt-7 ${
                 !arquivoSelecionado
-                  ? "opacity-50 cursor-default"
-                  : "cursor-pointer"
+                  ? "opacity-50 cursor-default hover:"
+                  : "cursor-pointer hover:shadow-xl hover:scale-105 transition-all ease-in-out duration-300"
               }`}
             >
               Converter {formatoaceito} para{" "}
