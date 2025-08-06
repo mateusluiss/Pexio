@@ -21,6 +21,30 @@ function Converter() {
     }
   };
 
+  function enviarArquivosServidor(arquivos) {
+    if (!arquivos || arquivos.length === 0) {
+      console.log("Nenhum arquivo para enviar");
+      return;
+    }
+
+    const formData = new FormData();
+    arquivos.forEach((file, i) => {
+      formData.append(`file${i}`, file);
+    });
+
+    fetch("http://localhost:3000/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Resposta do servidor: ", data);
+      })
+      .catch((err) => {
+        console.log("Erro ao enviar", err);
+      });
+  }
+
   return (
     <>
       <div className="h-screen place-items-center justify-center flex flex-col w-full">
@@ -88,6 +112,7 @@ function Converter() {
                   ? "opacity-50 cursor-default hover:"
                   : "cursor-pointer hover:shadow-xl hover:scale-105 transition-all ease-in-out duration-300"
               }`}
+              onClick={() => enviarArquivosServidor(arquivoSelecionado)}
             >
               Converter {formatoaceito} para{" "}
               {formatoaceito === "PDF" ? "PNG" : "PDF"}
