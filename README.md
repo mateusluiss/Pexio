@@ -1,4 +1,4 @@
-# Pexio
+# Pexio [UNDER CONSTRUCTION]
 
 **Pexio** é um conversor simples e eficiente que transforma arquivos PDF em imagens **PNG de alta qualidade**.
 
